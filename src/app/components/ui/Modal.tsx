@@ -37,12 +37,12 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-lg' 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: 8 }}
             transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className={`relative bg-white rounded-xl shadow-xl shadow-gray-900/10 ${maxWidth} w-full mx-4 border border-gray-200`}
+            className={`relative bg-zinc-950 rounded-xl shadow-xl shadow-black/40 ${maxWidth} w-full mx-4 border border-zinc-800`}
           >
-            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200">
-              <h2 className="text-[16px] text-gray-900 tracking-tight" style={{ fontWeight: 600 }}>{title}</h2>
-              <button onClick={onClose} className="p-1.5 rounded-md border border-transparent hover:border-gray-300 hover:bg-gray-100 transition-all">
-                <X className="w-4 h-4 text-gray-500" strokeWidth={1.5} />
+            <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800">
+              <h2 className="text-[16px] text-zinc-100 tracking-tight" style={{ fontWeight: 600 }}>{title}</h2>
+              <button onClick={onClose} className="p-1.5 rounded-md border border-transparent hover:border-zinc-700 hover:bg-zinc-900 transition-all">
+                <X className="w-4 h-4 text-zinc-400" strokeWidth={1.5} />
               </button>
             </div>
             <div className="p-6">{children}</div>
