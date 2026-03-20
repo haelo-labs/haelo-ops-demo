@@ -1,13 +1,16 @@
+import { SpatialProvider } from 'exocor';
 import { RouterProvider } from 'react-router';
 import { router } from './routes';
-import { AppProvider } from './context/AppContext';
 import { Toaster } from 'sonner';
+import { useOpsDemoExocorTools } from './hooks/useOpsDemoExocorTools';
 
 export default function App() {
+  const tools = useOpsDemoExocorTools();
+
   return (
-    <AppProvider>
+    <SpatialProvider tools={tools}>
       <RouterProvider router={router} />
       <Toaster position="bottom-right" theme="dark" richColors />
-    </AppProvider>
+    </SpatialProvider>
   );
 }

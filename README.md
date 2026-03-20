@@ -39,6 +39,26 @@ npm run dev
 
 Run `npx exocor dev` from this repo root so Exocor can read `.env` or `.env.local`.
 
+## Local Exocor Branch
+
+This branch is wired to the sibling local Exocor checkout with:
+
+```json
+"exocor": "file:../exocor"
+```
+
+To test against `exocor` on `feature/explicit-tools-capability-map`:
+
+```bash
+# in ../exocor
+npm run build
+
+# back in haelo-ops-demo
+npm install
+npx exocor dev
+npm run dev
+```
+
 ## Environment Variables
 
 - `ANTHROPIC_API_KEY`: your Anthropic API key for the Exocor-powered experience; the local relay reads this from `.env` or `.env.local`

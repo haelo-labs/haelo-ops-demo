@@ -45,3 +45,6 @@ export interface Activity {
   timestamp: string;
   type: 'ticket' | 'equipment' | 'inspection' | 'team';
 }
+
+export type EquipmentStatusFilter = 'all' | Equipment['status'];
+export type InspectionStatusFilter = 'all' | Inspection['status'];
