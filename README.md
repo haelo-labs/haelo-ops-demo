@@ -1,67 +1,51 @@
 # Haelō Ops Demo
 
-This repo is a small Vite + React demo app for quickly trying Exocor in an operations dashboard.
+An operations dashboard demo for trying [Exocor](https://github.com/haelo-labs/exocor) inside a familiar SaaS-style workflow.
 
-It simulates a more traditional product UI with equipment tracking, tickets, inspections, and team views so you can see how Exocor behaves inside a dashboard-style workflow.
+This app simulates equipment tracking, tickets, inspections, and team views so you can see how Exocor behaves in a dense product UI rather than a toy form.
 
-## What This Demo Is For
+## What You Can Try
 
-- Trying Exocor quickly in a familiar SaaS-style interface
-- Evaluating the SDK inside tickets, kanban, inspections, and operational views
-- Sharing a simple, runnable example with other developers
+- Navigate across dashboard, equipment, tickets, inspections, and team views
+- Open equipment and ticket details
+- Create tickets and inspections
+- Move and update tickets
+- Compare Exocor's learned app model with the app-native tools this demo exposes through `SpatialProvider`
 
 This is a demo app, not a production starter.
 
 ## Quick Start
 
 1. Copy `.env.example` to `.env`
-2. Add your own Anthropic API key to `ANTHROPIC_API_KEY`
+2. Add your Anthropic API key to `ANTHROPIC_API_KEY`
 3. Install dependencies with `npm install`
-4. In one terminal, start the local Exocor relay with `npx exocor dev`
-5. In a second terminal, start the app with `npm run dev`
+4. In one terminal, run `npx exocor dev`
+5. In a second terminal, run `npm run dev`
 6. Open the local Vite URL shown in the terminal
 
-The relay is required for localhost testing. It reads `ANTHROPIC_API_KEY` from the demo root and keeps that key out of the browser.
+Run `npx exocor dev` from this repo root so the local relay can read `.env` or `.env.local`.
 
-## Local Testing Flow
+## Exocor Version
 
-From the demo root:
+This repo is pinned to `exocor@0.2.0`.
 
-```bash
-# terminal 1
-npx exocor dev
-```
+The demo uses the published package by default so the GitHub repo is clone-and-run friendly.
 
-```bash
-# terminal 2
-npm run dev
-```
+## App-Native Tools
 
-Run `npx exocor dev` from this repo root so Exocor can read `.env` or `.env.local`.
+This demo registers app-native tools for workflows the UI already supports today.
 
-## Local Exocor Branch
+- Global navigation across the main views
+- Equipment filtering, equipment details, and ticket creation from equipment
+- Ticket creation, ticket details, ticket updates, and ticket movement
+- Inspection filtering and inspection creation
+- Team member details
 
-This branch is wired to the sibling local Exocor checkout with:
-
-```json
-"exocor": "file:../exocor"
-```
-
-To test against `exocor` on `feature/explicit-tools-capability-map`:
-
-```bash
-# in ../exocor
-npm run build
-
-# back in haelo-ops-demo
-npm install
-npx exocor dev
-npm run dev
-```
+The rest of the experience still works through Exocor's normal learned app structure and DOM fallback behavior.
 
 ## Environment Variables
 
-- `ANTHROPIC_API_KEY`: your Anthropic API key for the Exocor-powered experience; the local relay reads this from `.env` or `.env.local`
+- `ANTHROPIC_API_KEY`: used by the local Exocor relay from `.env` or `.env.local`
 - `VITE_EXOCOR_DEBUG`: optional debug flag for local SDK debugging
 
 ## Scripts
@@ -69,7 +53,7 @@ npm run dev
 - `npm run dev`: start the local development server
 - `npm run build`: create a production build
 - `npm run preview`: preview the production build locally
-- `npx exocor dev`: start the local Exocor relay used for localhost testing
+- `npx exocor dev`: start the local Exocor relay for localhost testing
 
 ## License
 
